@@ -61,14 +61,7 @@ public class Personcontroller {
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public String handlePersonNotFound(Exception ex) {
 		LOGGER.error("Handling error with message: {}", ex.getMessage());
-		 return "System Error Occurred ";
+		 return "System Error ccurred ";
 	}
 
-	/*@ExceptionHandler(Exception.class)
-	@ResponseBody
-	//@ResponseStatus(value = HttpStatus.BAD_REQUEST)
-	public String  handlePersonNotFound(Exception ex) {
-		LOGGER.error("Handling error with message: {}", ex.getMessage());
-		 return "System Error occurred "+ex.getMessage();
-	}*/
 }
