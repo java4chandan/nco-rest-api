@@ -26,8 +26,8 @@ public class SwaggerConfig {
 		return regex("/.*");
 	}
 
-	 private ApiInfo apiInfo() {
+	private ApiInfo apiInfo() {
 	        return new ApiInfoBuilder().title("Swagger For nco-rest-api").description("APIs available in nco-rest-api").version("0.1").build();
-	    }
+	}
 
 }
