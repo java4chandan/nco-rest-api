@@ -32,24 +32,24 @@ public class Personcontroller {
 	@Autowired
 	PersonService personService;
 
-	@RequestMapping(value = { "/", "/person" }, method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = { "/", "/user" }, method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody List<Person> getAllPerson(HttpServletResponse response) {
 		return personService.getAllPerson();
 	}
 
-	@RequestMapping(value = "/person/{id}", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody Person findById(@PathVariable String id) {
 		return personService.readById(id);
 	}
 
-	@RequestMapping(value = "/person/{id}", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/user/{id}", method = RequestMethod.POST, produces = "application/json")
 	public @ResponseBody String updatePerson(@RequestBody Person perrson) {
 		LOGGER.info("Updating Person entry with information: {}", perrson);
 		WriteResult updated = personService.update(perrson);
 		return updated.getN() == 1 ? "Updated successfully !!" : "Update failed!!";
 	}
 
-	@RequestMapping(value = "/person/{id}", method = RequestMethod.DELETE, produces = "application/json")
+	@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE, produces = "application/json")
 	public @ResponseBody String deletePerson(@PathVariable String id) {
 		LOGGER.info("Deleting Person entry with information: {}", id);
 		int delete = personService.deleteById(id);
