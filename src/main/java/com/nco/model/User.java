@@ -1,20 +1,21 @@
 package com.nco.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Person {
-	// id will be used for storing MongoDB _id
+@Document(collection = "User")
+public class User {
 	@Id
 	private String id;
 	private String name;
 	private String address;
 
-	public Person() {
+	public User() {
 	}
 
-	public Person(String i, String n, String a) {
+	public User(String i, String n, String a) {
 		this.id = i;
 		this.name = n;
 		this.address = a;
@@ -46,6 +47,8 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return id + "::" + name + "::" + address;
+		return "User [id=" + id + ", name=" + name + ", address=" + address + "]";
 	}
+
+
 }
